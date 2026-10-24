@@ -1,0 +1,403 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1080" width="1600" height="1080">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D16" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <!-- Card Background Gradients -->
+    <linearGradient id="clientCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="neonBlueGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <!-- Arrow Markers -->
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#38BDF8" />
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#10B981" />
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#F59E0B" />
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#A855F7" />
+    </marker>
+    <marker id="arrowPink" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#EC4899" />
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#94A3B8" />
+    </marker>
+
+    <!-- Filter Shadows -->
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 26px; font-weight: 800; fill: #F8FAFC; letter-spacing: -0.5px; }
+    .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; fill: #94A3B8; }
+    .tier-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; }
+    .box-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #FFFFFF; }
+    .box-sub { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; font-weight: 600; }
+    .box-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #CBD5E1; line-height: 1.4; }
+    .label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 10px; font-weight: 600; }
+    .badge { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.5px; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="1600" height="1080" fill="url(#bgGrad)" />
+
+  <!-- Subtle Blueprint Grid lines -->
+  <g opacity="0.07" stroke="#94A3B8" stroke-width="1">
+    <line x1="0" y1="80" x2="1600" y2="80" />
+    <line x1="0" y1="560" x2="1600" y2="560" />
+    <line x1="0" y1="820" x2="1600" y2="820" />
+    <line x1="390" y1="80" x2="390" y2="820" />
+    <line x1="720" y1="80" x2="720" y2="820" />
+    <line x1="1250" y1="80" x2="1250" y2="820" />
+  </g>
+
+  <!-- Header -->
+  <g transform="translate(60, 42)">
+    <rect x="-10" y="-8" width="54" height="34" rx="8" fill="#0485F7" fill-opacity="0.2" stroke="#0485F7" stroke-width="1.5" />
+    <text x="17" y="15" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="16" font-weight="900" fill="#38BDF8">SF</text>
+    <text x="60" y="8" class="title">FitSync AI (Shyft) — System Architecture Diagram</text>
+    <text x="60" y="27" class="subtitle">Complete Technical Architecture: Client Tier, API Gateway &amp; Auth, Modular Monolith Backend, Data Store, and Extension Ecosystem</text>
+    <!-- Version Tag -->
+    <rect x="1350" y="-2" width="130" height="26" rx="13" fill="#1E293B" stroke="#334155" stroke-width="1" />
+    <circle cx="1364" cy="11" r="4" fill="#10B981" />
+    <text x="1375" y="15" class="badge" fill="#94A3B8">PRACTICAL 2 • ARCH</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 1. CLIENT TIER (Left) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(60, 100)">
+    <!-- Swimlane Frame -->
+    <rect width="300" height="440" rx="14" fill="#0B132B" fill-opacity="0.6" stroke="#0284C7" stroke-width="1.5" filter="url(#boxShadow)" />
+    <path d="M 0 14 Q 0 0 14 0 L 286 0 Q 300 0 300 14 L 300 36 L 0 36 Z" fill="#0369A1" fill-opacity="0.3" />
+    <text x="20" y="24" class="tier-header" fill="#38BDF8">1. CLIENT TIER (Mobile App)</text>
+
+    <!-- Block: React Native / Expo -->
+    <g transform="translate(20, 50)">
+      <rect width="260" height="75" rx="10" fill="url(#clientCardGrad)" stroke="#38BDF8" stroke-width="1.5" />
+      <text x="16" y="25" class="box-title">React Native + Expo App</text>
+      <text x="16" y="42" class="box-sub" fill="#38BDF8">Feature-Sliced Design (FSD 2.1)</text>
+      <text x="16" y="60" class="box-text">Layers: app, pages, widgets, features, entities</text>
+    </g>
+
+    <!-- Block: Liquid Glass UI -->
+    <g transform="translate(20, 140)">
+      <rect width="260" height="110" rx="10" fill="url(#clientCardGrad)" stroke="#0EA5E9" stroke-width="1" />
+      <text x="16" y="24" class="box-title">Liquid Glass UI Engine</text>
+      <text x="16" y="44" class="box-text">• WCAG 4.5:1 High-Contrast Dark (#060607)</text>
+      <text x="16" y="62" class="box-text">• Thinking UI (Terminal Labor Illusion)</text>
+      <text x="16" y="80" class="box-text">• Floating Now Playing Active Workout Bar</text>
+      <text x="16" y="98" class="box-text">• TUT Metronome Pulse &amp; Haptic Cues</text>
+    </g>
+
+    <!-- Block: Offline-First Local Store -->
+    <g transform="translate(20, 265)">
+      <rect width="260" height="85" rx="10" fill="url(#clientCardGrad)" stroke="#10B981" stroke-width="1.5" />
+      <text x="16" y="24" class="box-title">Offline-First Local Cache</text>
+      <text x="16" y="42" class="box-sub" fill="#34D399">AsyncStorage / SQLite</text>
+      <text x="16" y="60" class="box-text">• Workout session state persistence (Zero-loss)</text>
+      <text x="16" y="76" class="box-text">• Queued offline sync requests for gym mode</text>
+    </g>
+
+    <!-- Block: Secure Auth Client -->
+    <g transform="translate(20, 365)">
+      <rect width="260" height="55" rx="10" fill="url(#clientCardGrad)" stroke="#F59E0B" stroke-width="1" />
+      <text x="16" y="23" class="box-title">Auth Client &amp; SecureStore</text>
+      <text x="16" y="41" class="box-text">GoTrue JWT Bearer storage &amp; HTTP interceptor</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 2. GATEWAY & AUTH TIER (Middle-Left) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(400, 100)">
+    <rect width="280" height="440" rx="14" fill="#0B132B" fill-opacity="0.6" stroke="#F59E0B" stroke-width="1.5" filter="url(#boxShadow)" />
+    <path d="M 0 14 Q 0 0 14 0 L 266 0 Q 280 0 280 14 L 280 36 L 0 36 Z" fill="#B45309" fill-opacity="0.25" />
+    <text x="20" y="24" class="tier-header" fill="#FBBF24">2. GATEWAY &amp; AUTH TIER</text>
+
+    <!-- Block: Reverse Proxy / API Gateway -->
+    <g transform="translate(20, 50)">
+      <rect width="240" height="85" rx="10" fill="url(#clientCardGrad)" stroke="#F59E0B" stroke-width="1.5" />
+      <text x="16" y="24" class="box-title">Reverse Proxy / Gateway</text>
+      <text x="16" y="42" class="box-sub" fill="#FBBF24">Docker Auth Proxy / Nginx (:5080)</text>
+      <text x="16" y="60" class="box-text">• Forwarding routes to API &amp; Auth</text>
+      <text x="16" y="76" class="box-text">• Rate limiting &amp; CORS protection</text>
+    </g>
+
+    <!-- Block: GoTrue Auth Service -->
+    <g transform="translate(20, 155)">
+      <rect width="240" height="135" rx="10" fill="url(#clientCardGrad)" stroke="#10B981" stroke-width="1.5" />
+      <text x="16" y="24" class="box-title">GoTrue Auth Service</text>
+      <text x="16" y="42" class="box-sub" fill="#34D399">Supabase-compatible (:54321)</text>
+      <text x="16" y="62" class="box-text">• Passwordless 6-digit OTP codes</text>
+      <text x="16" y="80" class="box-text">• Google &amp; Apple OAuth integration</text>
+      <text x="16" y="98" class="box-text">• HS256 JWT Token Issuer</text>
+      <text x="16" y="116" class="box-text">• Endpoint: /auth/v1/otp, /verify</text>
+    </g>
+
+    <!-- Block: SMTP Mail Service -->
+    <g transform="translate(20, 310)">
+      <rect width="240" height="75" rx="10" fill="url(#clientCardGrad)" stroke="#64748B" stroke-width="1" />
+      <text x="16" y="24" class="box-title">SMTP Mailer (Mailpit / SendGrid)</text>
+      <text x="16" y="42" class="box-sub" fill="#94A3B8">Mailpit (:8025 Dev) / Cloud SMTP</text>
+      <text x="16" y="60" class="box-text">Delivery of 6-digit OTP login magic links</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 3. BACKEND TIER: MODULAR MONOLITH (Center) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(720, 100)">
+    <rect width="480" height="440" rx="14" fill="#0B132B" fill-opacity="0.6" stroke="#8B5CF6" stroke-width="1.5" filter="url(#boxShadow)" />
+    <path d="M 0 14 Q 0 0 14 0 L 466 0 Q 480 0 480 14 L 480 36 L 0 36 Z" fill="#6D28D9" fill-opacity="0.3" />
+    <text x="20" y="24" class="tier-header" fill="#C084FC">3. BACKEND TIER (Modular Monolith — ASP.NET Core / .NET 10)</text>
+
+    <!-- API Host & Pipelines -->
+    <g transform="translate(20, 48)">
+      <rect width="440" height="45" rx="8" fill="#1E1B4B" stroke="#A78BFA" stroke-width="1.2" />
+      <text x="20" y="20" class="box-title">ASP.NET Core Web API Host (:5080)</text>
+      <text x="20" y="36" class="box-text">Strict Fallback JWT Bearer Auth Policy • User ID from IUserContext (Never Body/Query)</text>
+    </g>
+
+    <!-- Sub-module: Users Module -->
+    <g transform="translate(20, 105)">
+      <rect width="210" height="135" rx="10" fill="url(#clientCardGrad)" stroke="#38BDF8" stroke-width="1.2" />
+      <rect x="12" y="10" width="85" height="18" rx="4" fill="#0284C7" fill-opacity="0.3" />
+      <text x="18" y="22" class="badge" fill="#38BDF8">MODULE: USERS</text>
+      <text x="14" y="44" class="box-title" font-size="13">Users &amp; Identity</text>
+      <text x="14" y="62" class="box-text">• User profiles &amp; preferences</text>
+      <text x="14" y="78" class="box-text">• Encrypted medical flags</text>
+      <text x="14" y="94" class="box-text">• Habits &amp; Bridge Plan streak</text>
+      <text x="14" y="110" class="box-text">• 8-session freemium guard</text>
+      <text x="14" y="126" class="box-text">• Endpoints: /api/users, /profile</text>
+    </g>
+
+    <!-- Sub-module: Workouts Module -->
+    <g transform="translate(250, 105)">
+      <rect width="210" height="135" rx="10" fill="url(#clientCardGrad)" stroke="#10B981" stroke-width="1.2" />
+      <rect x="12" y="10" width="105" height="18" rx="4" fill="#047857" fill-opacity="0.3" />
+      <text x="18" y="22" class="badge" fill="#34D399">MODULE: WORKOUTS</text>
+      <text x="14" y="44" class="box-title" font-size="13">Workouts &amp; Sessions</text>
+      <text x="14" y="62" class="box-text">• Dashboard 3-state engine</text>
+      <text x="14" y="78" class="box-text">• Active workout state machine</text>
+      <text x="14" y="94" class="box-text">• 3D Set Logs (Weight/Reps/TUT)</text>
+      <text x="14" y="110" class="box-text">• Real-time adaptation engine</text>
+      <text x="14" y="126" class="box-text">• RPE score &amp; Exercise library</text>
+    </g>
+
+    <!-- In-Memory MediatR Bus -->
+    <g transform="translate(20, 252)">
+      <rect width="440" height="48" rx="8" fill="#2E1065" stroke="#C084FC" stroke-width="1.2" stroke-dasharray="4 2" />
+      <text x="20" y="20" class="box-title" fill="#F3E8FF">MediatR In-Memory Message &amp; Domain Event Bus</text>
+      <text x="20" y="36" class="box-text" fill="#E9D5FF">Strict module isolation: WorkoutCompletedEvent, UserRegisteredEvent (No direct references)</text>
+    </g>
+
+    <!-- Dapper Micro-ORM -->
+    <g transform="translate(20, 312)">
+      <rect width="440" height="60" rx="8" fill="url(#clientCardGrad)" stroke="#64748B" stroke-width="1.2" />
+      <text x="20" y="22" class="box-title">Data Access: Dapper Micro-ORM + UnitOfWork</text>
+      <text x="20" y="40" class="box-text">• IDbConnectionFactory connection pool over PostgreSQL (No EF Core bloat)</text>
+      <text x="20" y="54" class="box-text">• High-speed serialization &amp; parsing of JSONB 3D logs &amp; medical data</text>
+    </g>
+
+    <!-- Schema Versions -->
+    <g transform="translate(20, 385)">
+      <rect width="440" height="35" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1" />
+      <text x="20" y="22" class="box-text" fill="#94A3B8">Automated SQL Migrations: Applied at startup and tracked in module-specific <tspan fill="#38BDF8">schema_versions</tspan></text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 4. DATA TIER: POSTGRESQL (Right) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(1240, 100)">
+    <rect width="300" height="440" rx="14" fill="#0B132B" fill-opacity="0.6" stroke="#10B981" stroke-width="1.5" filter="url(#boxShadow)" />
+    <path d="M 0 14 Q 0 0 14 0 L 286 0 Q 300 0 300 14 L 300 36 L 0 36 Z" fill="#047857" fill-opacity="0.3" />
+    <text x="20" y="24" class="tier-header" fill="#34D399">4. DATA TIER (Storage)</text>
+
+    <!-- Database Cylinder Node -->
+    <g transform="translate(25, 55)">
+      <!-- Cylinder top -->
+      <path d="M 0 25 C 0 8 50 0 125 0 C 200 0 250 8 250 25 L 250 330 C 250 348 200 355 125 355 C 50 355 0 348 0 330 Z" fill="#064E3B" stroke="#10B981" stroke-width="1.5" />
+      <ellipse cx="125" cy="25" rx="125" ry="18" fill="#047857" stroke="#10B981" stroke-width="1.5" />
+      
+      <text x="125" y="30" text-anchor="middle" class="box-title" fill="#ECFDF5">PostgreSQL Database (:5432)</text>
+      <text x="125" y="60" text-anchor="middle" class="box-sub" fill="#6EE7B7">Databases: 'shyft' &amp; 'gotrue'</text>
+
+      <line x1="20" y1="75" x2="230" y2="75" stroke="#047857" stroke-width="1" />
+
+      <text x="25" y="98" class="box-sub" fill="#34D399">Relational Entities:</text>
+      <text x="25" y="116" class="box-text">• users, auth_identities</text>
+      <text x="25" y="132" class="box-text">• habit_streaks, milestones</text>
+      <text x="25" y="148" class="box-text">• exercise_library (biomechanics)</text>
+      <text x="25" y="164" class="box-text">• workout_plans, training_days</text>
+      <text x="25" y="180" class="box-text">• workout_sessions (lifecycle)</text>
+
+      <line x1="20" y1="195" x2="230" y2="195" stroke="#047857" stroke-width="1" />
+
+      <text x="25" y="218" class="box-sub" fill="#F59E0B">Hybrid JSONB Columns:</text>
+      <text x="25" y="236" class="box-text">• <tspan fill="#FDE68A">workout_set_logs.metrics:</tspan></text>
+      <text x="35" y="254" class="box-text">weight, reps, tempo (4-0-1-0),</text>
+      <text x="35" y="270" class="box-text">holdSeconds, distanceM</text>
+      <text x="25" y="292" class="box-text">• <tspan fill="#FDE68A">users.medical_flags:</tspan></text>
+      <text x="35" y="308" class="box-text">encrypted spinal context &amp; injuries</text>
+      <text x="25" y="332" class="box-text">• schema_versions per module</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- 5. EXTENSION & FUTURE MODULES (Bottom Row) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(60, 580)">
+    <rect width="1480" height="240" rx="14" fill="#0B132B" fill-opacity="0.6" stroke="#EC4899" stroke-width="1.5" filter="url(#boxShadow)" />
+    <path d="M 0 14 Q 0 0 14 0 L 1466 0 Q 1480 0 1480 14 L 1480 36 L 0 36 Z" fill="#9D174D" fill-opacity="0.3" />
+    <text x="20" y="24" class="tier-header" fill="#F472B6">5. EXTENSION &amp; FUTURE ROADMAP MODULES (Nix AI, Notifications, Billing &amp; Observability)</text>
+
+    <!-- Mod 1: AI Engine Nix -->
+    <g transform="translate(20, 50)">
+      <rect width="335" height="165" rx="10" fill="url(#clientCardGrad)" stroke="#EC4899" stroke-width="1.5" />
+      <rect x="15" y="12" width="100" height="18" rx="4" fill="#BE185D" fill-opacity="0.3" />
+      <text x="20" y="24" class="badge" fill="#F472B6">AI &amp; ADAPTATION</text>
+      <text x="15" y="48" class="box-title">Nix AI &amp; Adaptation Engine</text>
+      <text x="15" y="66" class="box-sub" fill="#F472B6">Model Context Protocol (MCP) Bridge</text>
+      <text x="15" y="86" class="box-text">• Local Quantized LLM (Llama 3 / Mistral via Ollama)</text>
+      <text x="15" y="104" class="box-text">• Empathetic Coach persona for gym anxiety relief</text>
+      <text x="15" y="122" class="box-text">• <tspan fill="#FDE047">Strict Deterministic Biomechanics Rule Engine:</tspan></text>
+      <text x="25" y="140" class="box-text">Algorithm-only calculation for weights/reps (Zero LLM hallucinations)</text>
+      <text x="15" y="158" class="box-text">• Anti-Churn Agent: detects stagnation after 3 sessions</text>
+    </g>
+
+    <!-- Mod 2: Notifications -->
+    <g transform="translate(385, 50)">
+      <rect width="335" height="165" rx="10" fill="url(#clientCardGrad)" stroke="#38BDF8" stroke-width="1.5" />
+      <rect x="15" y="12" width="115" height="18" rx="4" fill="#0284C7" fill-opacity="0.3" />
+      <text x="20" y="24" class="badge" fill="#38BDF8">NOTIFICATIONS</text>
+      <text x="15" y="48" class="box-title">Smart Notifications Module</text>
+      <text x="15" y="66" class="box-sub" fill="#38BDF8">Firebase Cloud Messaging (FCM) &amp; Expo</text>
+      <text x="15" y="86" class="box-text">• Habit Loop Retention: daily streak alerts &amp; reminders</text>
+      <text x="15" y="104" class="box-text">• Bridge Plan Celebration: unlock Home-to-Gym Plan B</text>
+      <text x="15" y="122" class="box-text">• Pre-workout readiness &amp; hydration reminders</text>
+      <text x="15" y="140" class="box-text">• Background inactivity triggers (Anti-dropoff ping)</text>
+      <text x="15" y="158" class="box-text">• Local Scheduled Alarms for rest timer intervals</text>
+    </g>
+
+    <!-- Mod 3: Payments & Subscriptions -->
+    <g transform="translate(750, 50)">
+      <rect width="335" height="165" rx="10" fill="url(#clientCardGrad)" stroke="#F59E0B" stroke-width="1.5" />
+      <rect x="15" y="12" width="125" height="18" rx="4" fill="#B45309" fill-opacity="0.3" />
+      <text x="20" y="24" class="badge" fill="#FBBF24">PAYMENTS &amp; BILLING</text>
+      <text x="15" y="48" class="box-title">Payments &amp; Subscriptions</text>
+      <text x="15" y="66" class="box-sub" fill="#FBBF24">Stripe API &amp; App Store / Google Play</text>
+      <text x="15" y="86" class="box-text">• Freemium Access Controller: hard limit 8 sessions</text>
+      <text x="15" y="104" class="box-text">• Pro Plan ($10/month) paywall unlock trigger</text>
+      <text x="15" y="122" class="box-text">• Webhook event listeners for renewal/cancellation</text>
+      <text x="15" y="140" class="box-text">• In-App Purchases (StoreKit 2 / Google Play Billing)</text>
+      <text x="15" y="158" class="box-text">• Feature gating: TUT metronome &amp; Anti-churn agent</text>
+    </g>
+
+    <!-- Mod 4: Observability & Telemetry -->
+    <g transform="translate(1115, 50)">
+      <rect width="345" height="165" rx="10" fill="url(#clientCardGrad)" stroke="#10B981" stroke-width="1.5" />
+      <rect x="15" y="12" width="120" height="18" rx="4" fill="#047857" fill-opacity="0.3" />
+      <text x="20" y="24" class="badge" fill="#34D399">OBSERVABILITY</text>
+      <text x="15" y="48" class="box-title">Telemetry &amp; Health Monitoring</text>
+      <text x="15" y="66" class="box-sub" fill="#34D399">OpenTelemetry, Serilog &amp; Prometheus</text>
+      <text x="15" y="86" class="box-text">• Distributed tracing across gateway &amp; monolith</text>
+      <text x="15" y="104" class="box-text">• Structured JSON logging with user context correlation</text>
+      <text x="15" y="122" class="box-text">• Offline sync latency tracking in poor gym coverage</text>
+      <text x="15" y="140" class="box-text">• Health checks (/health) for Docker Compose stack</text>
+      <text x="15" y="158" class="box-text">• Zero PII / Anonymized telemetry per GDPR</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- CONNECTING ARROWS & PROTOCOL ANNOTATIONS -->
+  <!-- ========================================================================= -->
+
+  <!-- Client -> Gateway (HTTPS / REST) -->
+  <path d="M 360 180 L 420 180" fill="none" stroke="#38BDF8" stroke-width="2.5" marker-end="url(#arrowBlue)" />
+  <rect x="365" y="158" width="50" height="18" rx="4" fill="#0B132B" stroke="#38BDF8" stroke-width="0.8" />
+  <text x="390" y="170" text-anchor="middle" class="label" fill="#38BDF8">REST API</text>
+
+  <!-- Client -> GoTrue Auth (Direct / Auth Proxy) -->
+  <path d="M 360 480 L 385 480 L 385 300 L 420 300" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="4 2" marker-end="url(#arrowGreen)" />
+  <rect x="365" y="325" width="40" height="18" rx="4" fill="#0B132B" stroke="#10B981" stroke-width="0.8" />
+  <text x="385" y="337" text-anchor="middle" class="label" fill="#10B981">AUTH</text>
+
+  <!-- GoTrue -> Mailpit -->
+  <path d="M 540 390 L 540 410" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="3 3" marker-end="url(#arrowGray)" />
+  <text x="548" y="405" class="label" fill="#94A3B8">OTP Code</text>
+
+  <!-- Gateway -> API Host -->
+  <path d="M 680 180 L 740 180" fill="none" stroke="#F59E0B" stroke-width="2.5" marker-end="url(#arrowAmber)" />
+  <rect x="683" y="158" width="55" height="18" rx="4" fill="#0B132B" stroke="#F59E0B" stroke-width="0.8" />
+  <text x="710" y="170" text-anchor="middle" class="label" fill="#F59E0B">JWT Bearer</text>
+
+  <!-- API Host -> Users & Workouts Modules -->
+  <path d="M 840 193 L 840 205" fill="none" stroke="#A78BFA" stroke-width="2" marker-end="url(#arrowPurple)" />
+  <path d="M 1080 193 L 1080 205" fill="none" stroke="#A78BFA" stroke-width="2" marker-end="url(#arrowPurple)" />
+
+  <!-- Dapper -> PostgreSQL -->
+  <path d="M 1200 440 L 1265 440" fill="none" stroke="#10B981" stroke-width="2.5" marker-end="url(#arrowGreen)" />
+  <rect x="1205" y="418" width="55" height="18" rx="4" fill="#0B132B" stroke="#10B981" stroke-width="0.8" />
+  <text x="1232" y="430" text-anchor="middle" class="label" fill="#10B981">SQL/JSONB</text>
+
+  <!-- Workouts -> AI Module (Downwards) -->
+  <path d="M 920 440 L 920 540 L 230 540 L 230 630" fill="none" stroke="#EC4899" stroke-width="2" stroke-dasharray="4 2" marker-end="url(#arrowPink)" />
+  <rect x="420" y="530" width="80" height="20" rx="4" fill="#0B132B" stroke="#EC4899" stroke-width="0.8" />
+  <text x="460" y="544" text-anchor="middle" class="label" fill="#F472B6">MCP Bridge</text>
+
+  <!-- Workouts -> Notifications Module -->
+  <path d="M 970 440 L 970 560 L 550 560 L 550 630" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="4 2" marker-end="url(#arrowBlue)" />
+  <rect x="710" y="550" width="85" height="20" rx="4" fill="#0B132B" stroke="#38BDF8" stroke-width="0.8" />
+  <text x="752" y="564" text-anchor="middle" class="label" fill="#38BDF8">Domain Events</text>
+
+  <!-- Users -> Payments Module -->
+  <path d="M 870 345 L 870 520 L 915 520 L 915 630" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 2" marker-end="url(#arrowAmber)" />
+  <rect x="875" y="510" width="80" height="20" rx="4" fill="#0B132B" stroke="#F59E0B" stroke-width="0.8" />
+  <text x="915" y="524" text-anchor="middle" class="label" fill="#FBBF24">Paywall Guard</text>
+
+  <!-- ========================================================================= -->
+  <!-- LEGEND (Bottom Footer) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(60, 845)">
+    <rect width="1480" height="55" rx="10" fill="#0F172A" stroke="#334155" stroke-width="1" />
+    <text x="25" y="32" class="box-title" font-size="12">ARCHITECTURAL LEGEND:</text>
+
+    <!-- Legend item 1 -->
+    <line x1="200" y1="28" x2="235" y2="28" stroke="#38BDF8" stroke-width="2.5" />
+    <text x="245" y="32" class="box-text">HTTPS / Synchronous REST API</text>
+
+    <!-- Legend item 2 -->
+    <line x1="480" y1="28" x2="515" y2="28" stroke="#F59E0B" stroke-width="2.5" />
+    <text x="525" y="32" class="box-text">JWT Bearer Validated Traffic</text>
+
+    <!-- Legend item 3 -->
+    <line x1="740" y1="28" x2="775" y2="28" stroke="#10B981" stroke-width="2.5" />
+    <text x="785" y="32" class="box-text">High-Speed Dapper SQL / JSONB Query</text>
+
+    <!-- Legend item 4 -->
+    <line x1="1060" y1="28" x2="1095" y2="28" stroke="#A855F7" stroke-width="2" stroke-dasharray="4 2" />
+    <text x="1105" y="32" class="box-text">MediatR In-Memory Event</text>
+
+    <!-- Legend item 5 -->
+    <line x1="1300" y1="28" x2="1335" y2="28" stroke="#EC4899" stroke-width="2" stroke-dasharray="4 2" />
+    <text x="1345" y="32" class="box-text">MCP / AI Integration Bridge</text>
+  </g>
+
+</svg>

@@ -1,0 +1,172 @@
+<mxfile host="app.diagrams.net" modified="2026-10-24T18:00:00.000Z" agent="Antigravity" version="22.1.0">
+  <diagram id="fitsync-ai-arch" name="FitSync AI System Architecture">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" background="#0B0F19" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="FitSync AI (Shyft) — System Architecture Diagram" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#F8FAFC;" vertex="1" parent="1">
+          <mxGeometry x="350" y="30" width="700" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="High-Level Architecture: Client, Modular Monolith Backend, Database, and Extension Modules" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontColor=#94A3B8;" vertex="1" parent="1">
+          <mxGeometry x="350" y="70" width="700" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ZONE 1: CLIENT TIER -->
+        <mxCell id="zone_client" value="1. CLIENT TIER (Mobile Frontend)" style="swimlane;whiteSpace=wrap;html=1;startSize=30;rounded=1;arcSize=8;fillColor=#111827;strokeColor=#38BDF8;strokeWidth=2;fontColor=#38BDF8;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="300" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="client_app" value="&lt;b&gt;Mobile Application&lt;/b&gt;&lt;br&gt;React Native + Expo SDK&lt;br&gt;&lt;i&gt;Feature-Sliced Design (FSD 2.1)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#0485F7;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="zone_client">
+          <mxGeometry x="25" y="50" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="client_ui" value="&lt;b&gt;Liquid Glass UI System&lt;/b&gt;&lt;br&gt;• WCAG 4.5:1 High-Contrast Neon&lt;br&gt;• Thinking UI &amp;amp; Now Playing Bar&lt;br&gt;• TUT Metronome &amp;amp; Haptic Cues" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#0284C7;strokeWidth=1;fontColor=#E2E8F0;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="zone_client">
+          <mxGeometry x="25" y="130" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="client_cache" value="&lt;b&gt;Offline-First Local Cache&lt;/b&gt;&lt;br&gt;AsyncStorage / SQLite&lt;br&gt;• Active Session State Persistence&lt;br&gt;• Offline Sync Request Queue" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#10B981;strokeWidth=1.5;fontColor=#E2E8F0;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="zone_client">
+          <mxGeometry x="25" y="230" width="250" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="client_auth_mod" value="&lt;b&gt;Auth Client &amp;amp; Secure Store&lt;/b&gt;&lt;br&gt;GoTrue Token Storage &amp;amp; Interceptors" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#F59E0B;strokeWidth=1;fontColor=#E2E8F0;fontSize=11;" vertex="1" parent="zone_client">
+          <mxGeometry x="25" y="325" width="250" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ZONE 2: GATEWAY & AUTH -->
+        <mxCell id="zone_gateway" value="2. GATEWAY &amp; AUTH TIER" style="swimlane;whiteSpace=wrap;html=1;startSize=30;rounded=1;arcSize=8;fillColor=#111827;strokeColor=#F59E0B;strokeWidth=2;fontColor=#F59E0B;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="420" y="120" width="280" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="api_gateway" value="&lt;b&gt;Reverse Proxy / API Gateway&lt;/b&gt;&lt;br&gt;Docker Auth Proxy / Nginx (:5080)&lt;br&gt;• Route Forwarding&lt;br&gt;• Rate Limiting &amp;amp; SSL Termination" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#F59E0B;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="zone_gateway">
+          <mxGeometry x="20" y="50" width="240" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="gotrue_auth" value="&lt;b&gt;GoTrue Auth Service&lt;/b&gt;&lt;br&gt;Supabase-compatible Auth (:54321)&lt;br&gt;• Passwordless OTP / Magic Links&lt;br&gt;• Google / Apple OAuth&lt;br&gt;• HS256 JWT Token Issuer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#10B981;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="zone_gateway">
+          <mxGeometry x="20" y="160" width="240" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="smtp_mailpit" value="&lt;b&gt;SMTP Mail Service&lt;/b&gt;&lt;br&gt;Mailpit (Dev) / SendGrid (Prod)&lt;br&gt;6-digit OTP Code Dispatcher" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#64748B;strokeWidth=1;fontColor=#E2E8F0;fontSize=11;" vertex="1" parent="zone_gateway">
+          <mxGeometry x="20" y="295" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ZONE 3: BACKEND MODULAR MONOLITH -->
+        <mxCell id="zone_backend" value="3. BACKEND TIER (Modular Monolith — ASP.NET Core / .NET 10)" style="swimlane;whiteSpace=wrap;html=1;startSize=30;rounded=1;arcSize=8;fillColor=#111827;strokeColor=#8B5CF6;strokeWidth=2;fontColor=#A78BFA;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="760" y="120" width="460" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="net_api_host" value="&lt;b&gt;ASP.NET Core Web API Host&lt;/b&gt;&lt;br&gt;Fallback JWT Bearer Auth Policy | IUserContext Resolution" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#8B5CF6;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="zone_backend">
+          <mxGeometry x="25" y="45" width="410" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Module: Users -->
+        <mxCell id="mod_users" value="&lt;b&gt;Module: Users&lt;/b&gt;&lt;br&gt;• User Profile &amp;amp; Settings&lt;br&gt;• Medical Flags &amp;amp; Biomechanics Context&lt;br&gt;• Habit Streaks &amp;amp; Bridge Plan Milestones&lt;br&gt;• Freemium Subscription Guard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#38BDF8;strokeWidth=1.5;fontColor=#E2E8F0;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="zone_backend">
+          <mxGeometry x="25" y="110" width="195" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Module: Workouts -->
+        <mxCell id="mod_workouts" value="&lt;b&gt;Module: Workouts&lt;/b&gt;&lt;br&gt;• Dashboard &amp;amp; State Machine Engine&lt;br&gt;• Active Session &amp;amp; 3D Logs (JSONB)&lt;br&gt;• Real-Time Adaptation (&apos;Tired&apos;/&apos;Busy&apos;)&lt;br&gt;• RPE Processing &amp;amp; Exercise Library" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0F172A;strokeColor=#10B981;strokeWidth=1.5;fontColor=#E2E8F0;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="zone_backend">
+          <mxGeometry x="240" y="110" width="195" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- MediatR Bus -->
+        <mxCell id="mediatr_bus" value="&lt;b&gt;MediatR In-Memory Message Bus&lt;/b&gt;&lt;br&gt;Loose Coupling &amp;amp; Cross-Module Domain Events (e.g., WorkoutCompletedEvent)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2E1065;strokeColor=#A855F7;strokeWidth=1.5;fontColor=#F3E8FF;fontSize=11;" vertex="1" parent="zone_backend">
+          <mxGeometry x="25" y="240" width="410" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Data Access Dapper -->
+        <mxCell id="dapper_orm" value="&lt;b&gt;Data Access Layer: Dapper Micro-ORM&lt;/b&gt;&lt;br&gt;IDbConnectionFactory / IUnitOfWork | Direct High-Performance SQL &amp;amp; JSONB Mapping" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#64748B;strokeWidth=1;fontColor=#CBD5E1;fontSize=11;" vertex="1" parent="zone_backend">
+          <mxGeometry x="25" y="305" width="410" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="migrations_schema" value="&lt;b&gt;Embedded SQL Migrations Tracker&lt;/b&gt; (Per-module schema_versions)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#94A3B8;" vertex="1" parent="zone_backend">
+          <mxGeometry x="25" y="360" width="410" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ZONE 4: DATA TIER -->
+        <mxCell id="zone_database" value="4. DATA TIER (Storage)" style="swimlane;whiteSpace=wrap;html=1;startSize=30;rounded=1;arcSize=8;fillColor=#111827;strokeColor=#10B981;strokeWidth=2;fontColor=#10B981;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="120" width="270" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="postgres_db" value="&lt;b&gt;PostgreSQL Database&lt;/b&gt;&lt;br&gt;(:5432) &apos;shyft&apos; / &apos;gotrue&apos;&lt;br&gt;&lt;br&gt;&lt;b&gt;Relational Tables:&lt;/b&gt;&lt;br&gt;• users, habits, streaks&lt;br&gt;• exercise_library, plans&lt;br&gt;• workout_sessions&lt;br&gt;&lt;br&gt;&lt;b&gt;JSONB Hybrid Columns:&lt;/b&gt;&lt;br&gt;• workout_set_logs.metrics&lt;br&gt;&amp;nbsp;&amp;nbsp;(weight x reps x tempo x hold)&lt;br&gt;• encrypted medical_flags" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#064E3B;strokeColor=#10B981;strokeWidth=1.5;fontColor=#ECFDF5;fontSize=11;align=left;spacingLeft=12;" vertex="1" parent="zone_database">
+          <mxGeometry x="25" y="60" width="220" height="310" as="geometry" />
+        </mxCell>
+
+        <!-- ZONE 5: EXTERNAL & FUTURE EXTENSION MODULES -->
+        <mxCell id="zone_extensions" value="5. EXTENSION &amp; FUTURE MODULES (AI, Notifications, Subscriptions)" style="swimlane;whiteSpace=wrap;html=1;startSize=30;rounded=1;arcSize=8;fillColor=#111827;strokeColor=#EC4899;strokeWidth=2;fontColor=#F472B6;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="60" y="600" width="1480" height="230" as="geometry" />
+        </mxCell>
+
+        <!-- Mod 1: AI Engine -->
+        <mxCell id="ext_ai" value="&lt;b&gt;AI &amp;amp; Nix Adaptation Engine&lt;/b&gt;&lt;br&gt;• Model Context Protocol (MCP) Bridge&lt;br&gt;• Quantized Local Models (Ollama: Llama-3 / Mistral)&lt;br&gt;• Deterministic Biomechanics Rules Engine&lt;br&gt;• Proactive Anti-Churn &amp;amp; Deload Detector" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#EC4899;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="zone_extensions">
+          <mxGeometry x="30" y="55" width="310" height="135" as="geometry" />
+        </mxCell>
+
+        <!-- Mod 2: Notifications -->
+        <mxCell id="ext_notifications" value="&lt;b&gt;Notifications Service (Future Module)&lt;/b&gt;&lt;br&gt;• Firebase Cloud Messaging (FCM) / Expo Push&lt;br&gt;• Habit Loop Retention &amp;amp; Daily Streak Alerts&lt;br&gt;• Pre-workout Hydration &amp;amp; Gymtimidation Boosts&lt;br&gt;• Background Inactivity Triggers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#38BDF8;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="zone_extensions">
+          <mxGeometry x="400" y="55" width="310" height="135" as="geometry" />
+        </mxCell>
+
+        <!-- Mod 3: Payments -->
+        <mxCell id="ext_payments" value="&lt;b&gt;Payments &amp;amp; Billing Service (Future Module)&lt;/b&gt;&lt;br&gt;• Stripe API &amp;amp; Webhook Handler&lt;br&gt;• Apple StoreKit &amp;amp; Google Play Billing&lt;br&gt;• Freemium Guard (8 Workouts Trial Limiter)&lt;br&gt;• Pro Tier Subscription Management ($10/mo)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#F59E0B;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="zone_extensions">
+          <mxGeometry x="770" y="55" width="310" height="135" as="geometry" />
+        </mxCell>
+
+        <!-- Mod 4: Analytics -->
+        <mxCell id="ext_analytics" value="&lt;b&gt;Telemetry &amp;amp; Observability (Future Module)&lt;/b&gt;&lt;br&gt;• OpenTelemetry Tracing &amp;amp; Prometheus Metrics&lt;br&gt;• Structured Serilog Output&lt;br&gt;• App Health &amp;amp; Gym-Environment Latency Tracking&lt;br&gt;• Strict GDPR-Compliant Anonymized Telemetry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1E293B;strokeColor=#10B981;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="zone_extensions">
+          <mxGeometry x="1140" y="55" width="310" height="135" as="geometry" />
+        </mxCell>
+
+        <!-- EDGES / CONNECTIONS -->
+        <!-- Client -> Gateway -->
+        <mxCell id="edge_client_gateway" value="HTTPS / REST / JWT Bearer" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#38BDF8;strokeWidth=2;fontColor=#38BDF8;fontSize=10;" edge="1" parent="1" source="client_app" target="api_gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Client -> GoTrue -->
+        <mxCell id="edge_client_gotrue" value="Auth: /otp, /verify, OAuth" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#10B981;strokeWidth=2;fontColor=#10B981;fontSize=10;" edge="1" parent="1" source="client_auth_mod" target="gotrue_auth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- GoTrue -> Mailpit -->
+        <mxCell id="edge_gotrue_mailpit" value="Send OTP Code" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#64748B;strokeWidth=1.5;dashed=1;fontColor=#94A3B8;fontSize=10;" edge="1" parent="1" source="gotrue_auth" target="smtp_mailpit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Gateway -> API Host -->
+        <mxCell id="edge_gateway_host" value="Forward Authorized API Requests" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#F59E0B;strokeWidth=2;fontColor=#F59E0B;fontSize=10;" edge="1" parent="1" source="api_gateway" target="net_api_host">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Modules to Dapper -->
+        <mxCell id="edge_users_dapper" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;strokeColor=#64748B;strokeWidth=1.5;" edge="1" parent="zone_backend" source="mod_users" target="dapper_orm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_workouts_dapper" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;strokeColor=#64748B;strokeWidth=1.5;" edge="1" parent="zone_backend" source="mod_workouts" target="dapper_orm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Dapper -> Postgres -->
+        <mxCell id="edge_dapper_postgres" value="SQL Queries / JSONB Operations" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#10B981;strokeWidth=2;fontColor=#10B981;fontSize=10;" edge="1" parent="1" source="dapper_orm" target="postgres_db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Inter-module MediatR -->
+        <mxCell id="edge_mediatr_users" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#A855F7;strokeWidth=1.5;dashed=1;" edge="1" parent="zone_backend" source="mod_users" target="mediatr_bus">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_mediatr_workouts" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#A855F7;strokeWidth=1.5;dashed=1;" edge="1" parent="zone_backend" source="mod_workouts" target="mediatr_bus">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Extensions connections -->
+        <!-- Workouts -> AI Engine -->
+        <mxCell id="edge_workouts_ai" value="MCP / Adaptation Guidance" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#EC4899;strokeWidth=1.5;dashed=1;fontColor=#F472B6;fontSize=10;" edge="1" parent="1" source="mod_workouts" target="ext_ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Workouts -> Notifications -->
+        <mxCell id="edge_workouts_notif" value="Trigger Push Events" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#38BDF8;strokeWidth=1.5;dashed=1;fontColor=#38BDF8;fontSize=10;" edge="1" parent="1" source="mod_workouts" target="ext_notifications">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Users -> Payments -->
+        <mxCell id="edge_users_payments" value="Subscription Webhooks / Sync" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#F59E0B;strokeWidth=1.5;dashed=1;fontColor=#F59E0B;fontSize=10;" edge="1" parent="1" source="mod_users" target="ext_payments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
